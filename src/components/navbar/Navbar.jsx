@@ -1,5 +1,8 @@
+"use client"
+
 import Link from 'next/link'
 import React from 'react'
+import styles from './navbar.module.css'
 
 const Navbar = () => {
   const menus = [
@@ -35,12 +38,19 @@ const Navbar = () => {
     }
   ]
   return (
-    <div>
-        <Link href="/">Just Write</Link>
-        <div>
+    <div className={styles.container}>
+        <Link href="/" className={styles.logo}>Just Write</Link>
+        <div className={styles.menus}>
             {menus.map(menu => (
-                <Link href={menu.url} key={menu.id}>{menu.title}</Link>
+                <Link href={menu.url} key={menu.id} className={styles.menu}>{menu.title}</Link>
             ))}
+            <button 
+                className={styles.logout}
+                onClick={() => {
+                    console.log('logged out')
+                }}>
+                Logout
+            </button>
         </div>
     </div>
   )
