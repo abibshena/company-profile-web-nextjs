@@ -55,9 +55,7 @@ const BlogPost = async ({params}) => {
         </div>
       </div>
       <div className={styles.content}>
-        <p className={styles.text}>
-          {data.content}
-        </p>
+        <p className={styles.text} dangerouslySetInnerHTML={{ __html: data.content }}></p>
       </div>
     </div>
   )
