@@ -2,6 +2,11 @@ import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
 
+export const metadata = {
+  title: 'Just Write | Contact Information',
+  description: 'this is the just write contact page',
+}
+
 const Contact = () => {
   return (
     <div className={styles.container}>
