@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 async function getData() {
   // console.log('lewat sini >>>', window.location.origin)
-  const res = await fetch(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/posts`, { 
+  const res = await fetch(`${process.env.HOST_API}/api/posts`, { 
     cache: 'no-store' 
   })
 
