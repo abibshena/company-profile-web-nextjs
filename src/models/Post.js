@@ -25,4 +25,10 @@ const postSchema = new Schema({
     }
 }, { timestamps: true })
 
-export default mongoose.model("Post", postSchema)
+let posts
+try {
+    posts = mongoose.model('Post')
+} catch (error) {
+    posts = mongoose.model('Post', postSchema)
+}
+export default posts
