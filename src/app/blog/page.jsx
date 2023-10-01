@@ -7,7 +7,6 @@ async function getData() {
   const res = await fetch(`${process.env.HOST_API}/api/posts`, { 
     cache: 'no-store' 
   })
-  console.log('res >>>', res)
 
   if (!res.ok) {
     throw new Error('Failed to fetch data')

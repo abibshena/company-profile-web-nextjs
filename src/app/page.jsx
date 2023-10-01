@@ -7,9 +7,10 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <div className={styles.item}>
-        <h1 className={styles.title}>Have a good idea to write about?</h1>
+        <h1 className={styles.title}>Better design for your digital products.</h1>
         <p className={styles.desc}>
-          Write whatever ideas you have here, so that other people can see them.
+          Turning your Idea into Reality. We bring together the teams from the
+          global tech industry.
         </p>
         <Button url="/blog" text="Write Now" />
       </div>

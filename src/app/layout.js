@@ -1,5 +1,6 @@
 import Navbar from '@/components/navbar/Navbar'
 import Footer from '@/components/footer/Footer'
+import AuthProvider from '@/components/authProvider/AuthProvider'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from "@/context/ThemeContext"
@@ -7,8 +8,8 @@ import { ThemeProvider } from "@/context/ThemeContext"
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Just Write',
-  description: 'a place where you can write anything,',
+  title: 'Lutfi Dev',
+  description: 'this is description',
 }
 
 export default function RootLayout({ children }) {
@@ -16,11 +17,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider>
-          <div className='container'>
-            <Navbar />
-            {children}
-            <Footer />
-          </div>
+          <AuthProvider>
+            <div className='container'>
+              <Navbar />
+              {children}
+              <Footer />
+            </div>
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>

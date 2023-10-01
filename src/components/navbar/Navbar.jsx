@@ -40,7 +40,7 @@ const Navbar = () => {
   ]
   return (
     <div className={styles.container}>
-        <Link href="/" className={styles.logo}>Just Write</Link>
+        <Link href="/" className={styles.logo}>Lutfi Dev</Link>
         <div className={styles.menus}>
             <DarkModeToggle />
             {menus.map(menu => (

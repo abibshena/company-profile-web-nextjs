@@ -1,10 +1,11 @@
 import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
+import Button from "@/components/button/Button"
 
 export const metadata = {
-  title: 'Just Write | Contact Information',
-  description: 'this is the just write contact page',
+  title: 'Lutfi Dev | Contact Information',
+  description: 'this is the Lutfi dev contact page',
 }
 
 const Contact = () => {
@@ -24,6 +25,7 @@ const Contact = () => {
           <input type="text" placeholder="name" className={styles.input} />
           <input type="text" placeholder="email" className={styles.input} />
           <textarea className={styles.textArea} placeholder="message" cols="30" rows="10"></textarea>
+          <Button url="#" text="Send"/>
         </form>
       </div>
     </div>

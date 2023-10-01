@@ -1,37 +1,17 @@
 "use client"
 import React, { useState, useEffect } from 'react'
 import useSWR from 'swr'
+import { useSession} from 'next-auth/react'
 import styles from './page.module.css'
 
 const Dashboard = () => {
-  // const [data, setData] = useState([])
-  // const [err, setErr] = useState(false)
-  // const [isLoading, setIsLoading] = useState(false)
+  const session = useSession()
 
-  // const getData = async () => {
-  //   setIsLoading(true)
-  //   const res = await fetch('https://jsonplaceholder.typicode.com/posts', { 
-  //     cache: 'no-store' 
-  //   })
-
-  //   if (!res.ok) {
-  //     setErr(true)
-  //   }
-  
-  //   const dataJson = await res.json()
-
-  //   setData(dataJson)
-  //   setIsLoading(false)
-  // }
-
-  // useEffect(() => {
-  //   getData()
-  // }, [])
+  console.log({session})
 
   const fetcher = (...args) => fetch(...args).then(res => res.json())
   const { data, error, isLoading } = useSWR('https://jsonplaceholder.typicode.com/posts', fetcher)
-  
-  console.log(data)
+ 
   return (
     <div>Dashboard</div>
   )
