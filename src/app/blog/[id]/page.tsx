@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { getPosts } from '@/app/api/posts/route'
 
 export const dynamic = 'force-dynamic'
 
