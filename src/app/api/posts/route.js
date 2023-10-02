@@ -15,6 +15,17 @@ export const GET = async (request) => {
     }
 }
 
+export const getPosts = async (id = null) => {
+    try {
+        await connect()
+        const posts = id ? await Post.findById(id) : await Post.find()
+
+        return new NextResponse(JSON.stringify(posts), { status: 200 })
+    } catch (error) {
+        return new NextResponse("Database Errpr", { status: 500 })   
+    }
+}
+
 export const POST = async (request) => {
     const body = await request.json()
     const newPost = new Post(body)

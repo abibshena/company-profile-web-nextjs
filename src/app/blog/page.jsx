@@ -2,14 +2,10 @@ import React from 'react'
 import styles from './page.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-
-export const runtime = "edge"
+import { getPosts } from '@/app/api/posts/route'
 
 async function getData() {
-  // console.log('lewat sini >>>', window.location.origin)
-  const res = await fetch(`https://${process.env.NEXT_PUBLIC_CLIENT_URL}/api/posts`, { 
-    cache: 'no-store' 
-  })
+  const res = await getPosts()
 
   if (!res.ok) {
     throw new Error('Failed to fetch data')

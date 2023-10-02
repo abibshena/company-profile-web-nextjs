@@ -2,13 +2,10 @@ import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-
-export const runtime = "edge"
+import { getPosts } from '@/app/api/posts/route'
 
 async function getData(id) {
-  const res = await fetch(`https://${process.env.NEXT_PUBLIC_CLIENT_URL}/api/posts/${id}`, { 
-    cache: 'no-store' 
-  })
+  const res = await getPosts(id);
 
   if (!res.ok) {
     return notFound()
