@@ -7,7 +7,7 @@ export const runtime = "edge"
 
 async function getData() {
   // console.log('lewat sini >>>', window.location.origin)
-  const res = await fetch(`http://${process.env.NEXT_PUBLIC_CLIENT_URL}/api/posts`, { 
+  const res = await fetch(`https://${process.env.NEXT_PUBLIC_CLIENT_URL}/api/posts`, { 
     cache: 'no-store' 
   })
 

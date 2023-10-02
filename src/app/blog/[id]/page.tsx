@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation'
 export const runtime = "edge"
 
 async function getData(id) {
-  const res = await fetch(`http://${process.env.NEXT_PUBLIC_CLIENT_URL}/api/posts/${id}`, { 
+  const res = await fetch(`https://${process.env.NEXT_PUBLIC_CLIENT_URL}/api/posts/${id}`, { 
     cache: 'no-store' 
   })
 
