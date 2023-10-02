@@ -4,8 +4,12 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { getPosts } from '@/app/api/posts/route'
 
+export const dynamic = 'force-dynamic'
+
 async function getData(id) {
-  const res = await getPosts(id);
+  const res = await fetch(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/posts/${id}`, { 
+    cache: 'no-store' 
+  })
 
   if (!res.ok) {
     return notFound()

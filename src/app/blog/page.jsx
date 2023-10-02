@@ -7,7 +7,9 @@ import { getPosts } from '@/app/api/posts/route'
 export const dynamic = 'force-dynamic'
 
 async function getData() {
-  const res = await getPosts()
+  const res = await fetch(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/posts`, { 
+    cache: 'no-store' 
+  })
 
   if (!res.ok) {
     throw new Error('Failed to fetch data')
