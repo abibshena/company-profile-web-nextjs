@@ -4,6 +4,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { getPosts } from '@/app/api/posts/route'
 
+export const dynamic = 'force-dynamic'
+
 async function getData() {
   const res = await getPosts()
 
