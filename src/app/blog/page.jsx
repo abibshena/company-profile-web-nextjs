@@ -6,8 +6,16 @@ import { getPosts } from '@/app/api/posts/route'
 
 export const dynamic = 'force-dynamic'
 
+const getBaseUrl = () => {
+  if (process.env.HOST_API) {
+    return `http://${process.env.HOST_API}`
+  }
+  return `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+}
+
 async function getData() {
-  const res = await fetch(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/posts`, { 
+  const url = getBaseUrl()
+  const res = await fetch(`${url}/api/posts`, { 
     cache: 'no-store' 
   })
 
