@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Button from "@/components/button/Button"
 
 export const metadata = {
-  title: 'Lutfi Dev | Contact Information',
+  title: 'Abib Doang | Contact Information',
   description: 'this is the Lutfi dev contact page',
 }
 
